@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Areeba ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.card{
+    width:90%;
+    max-width:420px;
+    background:white;
+    padding:30px 20px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #0003;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    color:#ff4081;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#555;
+    font-size:17px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4081;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+
+/* floating hearts */
+
+.heart{
+    position:absolute;
+    color:#ff4081;
+    font-size:25px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+
+/* confetti */
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:15px;
+    top:-20px;
+    animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+
+to{
+    transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+
+@media(max-width:500px){
+
+h1{
+font-size:30px;
+}
+
+p{
+font-size:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>🎂 Happy Birthday Areeba ❤️</h1>
+
+<p>
+
+Happy Birthday Areeba ✨
+
+<br><br>
+
+May your day be full of smiles, happiness and beautiful moments 💖
+
+<br><br>
+
+You are a wonderful person and I hope this new year of your life brings you lots of joy 🌸
+
+</p>
+
+
+<button onclick="surprise()">
+Open Surprise 🎁
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+
+setInterval(createHeart,300);
+
+
+
+function confetti(){
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.background=
+"hsl("+Math.random()*360+",100%,50%)";
+
+
+c.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+
+document.body.appendChild(c);
+
+
+setTimeout(()=>{
+c.remove();
+},5000);
+
+}
+
+}
+
+
+confetti();
+
+
+
+function surprise(){
+
+alert("💖 Happy Birthday Areeba 🎂 You are special ✨");
+
+confetti();
+
+}
+
+
+</script>
+
+
+</body>
+</html>
